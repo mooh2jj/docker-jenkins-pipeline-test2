@@ -22,7 +22,8 @@ pipeline {
             steps {
             	// gralew이 있어야됨. git clone해서 project를 가져옴.
                 sh 'chmod +x gradlew'
-                sh  './gradlew clean build'
+//                 sh  './gradlew clean build'
+                sh  './gradlew --warning-mode=all --stacktrace clean build -x test'
 
 
                 sh 'ls -al ./build'
